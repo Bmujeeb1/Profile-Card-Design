@@ -1,0 +1,154 @@
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0b0b22, #0b0b22);
+    padding: 10px;
+}
+.card{
+    width: 350px;
+    height: 515px;
+    margin: 100px auto 0;
+    perspective: 1000px;
+    /* border-radius: 15px; */
+}
+.card-inner{
+    width: 100%;height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.front, .back{
+    box-shadow: 0 0 20px cyan;
+    width: 100%;height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front{
+    background: url(image/Bello.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+.front h2{
+    font-weight: 500;
+}
+.front p{
+    color: #ccc;
+    font-size: 13px;
+}
+.front button{
+    width: 120px;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 50px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: #fff;
+}
+.back{
+    background: #fff;
+    color: #333;
+    padding: 20px 40px;
+    transform: rotateY(180deg);
+}
+.back h1{
+    font-size: 50px;
+    line-height: 55px;
+    margin-bottom: 10px;
+}
+.back h1 span{
+    font-weight: 400;
+}
+.back p{
+    font-size: 14px;
+}
+.back .hand{
+    font-size: 120px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.col{
+    flex: 1;
+    text-align: center;
+    color: #555;
+     font-size: 12px;
+     position: relative;
+}
+.col h2{
+    font-size: 20px;
+}
+.col::after{
+    content: "";
+    width: 2.5px;
+    height: 20px;
+    background: #7800ad;
+    position: absolute;
+    top: 5px;right: 0;
+}
+.col:last-child::after{
+    display: none;
+}
+.col p{
+    margin-top: 5px;
+}
+.back button{
+    background: #7800ad;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 14px;
+    margin-right: 15px;
+    box-shadow: 0 8px 10px rgba(120, 0, 173, 0.3);
+}
+.back button a{
+    color: #fff;
+    box-shadow: none;
+}
+.back a{
+    width: 40px;height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px black;
+    display: flex;
+    justify-content: center;align-items: center;
+    margin: 0 5px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}
+
+
+@media screen and (max-width: 375px) {
+    .card{
+        width: 300px;
+    height: 450px;
+    }
+    .back .hand{
+        font-size: 78px;
+    }
+    .back a{
+        width: 38px;
+        height: 38px;
+    }
+    .back{
+        padding: 20px;
+    }
+
+}
